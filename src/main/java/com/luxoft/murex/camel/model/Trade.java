@@ -6,17 +6,17 @@
  */
 package com.luxoft.murex.camel.model;
 
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlRootElement;
 
 
-@XmlType
+@XmlRootElement
 public class Trade {
 
     //~ ----------------------------------------------------------------------------------------------------------------
     //~ Instance fields
     //~ ----------------------------------------------------------------------------------------------------------------
 
-    private String amount;
+    private long amount;
     private String currency;
     private String counterParty;
 
@@ -24,11 +24,11 @@ public class Trade {
     //~ Methods
     //~ ----------------------------------------------------------------------------------------------------------------
 
-    public String getAmount() {
+    public long getAmount() {
         return amount;
     }
 
-    public void setAmount(String amount) {
+    public void setAmount(long amount) {
         this.amount = amount;
     }
 
@@ -46,5 +46,13 @@ public class Trade {
 
     public void setCounterParty(String counterParty) {
         this.counterParty = counterParty;
+    }
+
+    @Override
+    public String toString() {
+        return "Trade{" +
+            "amount=" + amount +
+            ", currency='" + currency + '\'' +
+            ", counterParty='" + counterParty + '\'' + '}';
     }
 }
